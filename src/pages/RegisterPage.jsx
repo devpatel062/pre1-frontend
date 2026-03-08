@@ -17,7 +17,7 @@ export default function RegisterPage() {
   const onSubmit = async (e) => {
     e.preventDefault();
     const res = await dispatch(register(form));
-    if (!res.error) navigate('/assessment');
+    if (!res.error) navigate('/login', { state: { registered: true } });
   };
 
   return (
