@@ -153,13 +153,18 @@ export default function AssessmentPage() {
 
           {page < totalPages ? (
             <button
+              disabled={selectedValue == null}
               onClick={() => goToPage(page + 1)}
-              className="rounded bg-brand-700 px-4 py-2 text-white"
+              className="rounded bg-brand-700 px-4 py-2 text-white disabled:opacity-50"
             >
               Next →
             </button>
           ) : (
-            <button onClick={onSubmit} className="rounded bg-emerald-600 px-4 py-2 text-white">
+            <button
+              disabled={selectedValue == null}
+              onClick={onSubmit}
+              className="rounded bg-emerald-600 px-4 py-2 text-white disabled:opacity-50"
+            >
               Final Submit
             </button>
           )}
